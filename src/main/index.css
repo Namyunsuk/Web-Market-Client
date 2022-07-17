@@ -12,7 +12,7 @@
 }
 
 #body {
-  height: 100%; /*부모 태크(body)기준 100%를 차지함을 의미*/
+  height: 100vh; /* vh: 윈도우 높이를 기준으로 하는 높이 단위 , vw: 윈도우 넓이를 기준으로 하는 넓이 단위*/
   width: 1024px;
   margin: 0 auto; /*자식이 부모를 기준으로 가운데 정렬을 시킬 때 이 코드를 사용*/
   padding-bottom: 24px;
@@ -94,4 +94,9 @@
 
 .product-avatar {
   width: 24px; /*보통 width만 주면 비율에 맞추어서 height도 조정이 된다.*/
+}
+
+.product-link {
+  color: inherit; /*색상을 원래 색상 가지도록*/
+  text-decoration: none; /*텍스트의 밑줄 사라지게 함*/
 }

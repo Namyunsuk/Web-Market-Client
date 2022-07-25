@@ -8,11 +8,9 @@ function ProductPage() {
   const [product, setProduct] = useState(null);
   useEffect(function () {
     axios
-      .get(
-        `https://e153e320-4faa-4d1b-acbb-3196e5a4ecd6.mock.pstmn.io/products/${id}`
-      )
+      .get(`http://localhost:8080/products/${id}`)
       .then(function (result) {
-        setProduct(result.data);
+        setProduct(result.data.product);
       })
       .catch(function (error) {
         console.error("에러 발생: ", error);
@@ -25,7 +23,7 @@ function ProductPage() {
   return (
     <div>
       <div id="image-box">
-        <img src={"/" + product.imgUrl} />
+        <img src={"/" + product.imageUrl} />
       </div>
       <div id="profile-box">
         <img src="/images/icons/avatar.png" />

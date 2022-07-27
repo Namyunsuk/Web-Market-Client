@@ -1,10 +1,10 @@
 #banner {
-  height: 300px;
+  max-height: 300px;
 }
 
 #banner > img {
   width: 100%;
-  height: 300px;
+  max-height: 300px;
 }
 
 #body > h1 {
@@ -25,6 +25,17 @@
   border: 1px solid rgb(230, 230, 230);
   border-radius: 12px;
   overflow: hidden;
+  position: relative;
+}
+
+.product-blur {
+  position: absolute; /*부모태그를 기준으로 하게된다(product-card가 부모이므로 position:relative를 넣어줘야 한다.)*/
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #ffffffaa; /*뒤에 두 자리(aa)는 투명도*/
+  pointer-events: none; /*이게 없다면 클릭이안된다(링크를 그위에 있는 blur가 먹어버림),이떄 이 구문을 써주면 클릭 가능해짐*/
 }
 
 .product-img {

@@ -26,15 +26,15 @@ body,
   align-items: center;
   justify-content: space-between;
 }
-
 #header-area img {
   width: 128px;
   height: 36px;
 }
 
 #body {
-  height: 100vh; /* vh: 윈도우 높이를 기준으로 하는 높이 단위 , vw: 윈도우 넓이를 기준으로 하는 넓이 단위*/
-  width: 1024px;
+  min-height: 100vh; /* vh: 윈도우 높이를 기준으로 하는 높이 단위 , vw: 윈도우 넓이를 기준으로 하는 넓이 단위*/
+  max-width: 1024px;
+  width: 100%; /*크기가 큰 데스크탑 같은 경우 max-width를 따라가고 크기가 작은 디바이스는 width:100%를 따라가게 된다.*/
   margin: 0 auto; /*자식이 부모를 기준으로 가운데 정렬을 시킬 때 이 코드를 사용*/
   padding-bottom: 24px;
 }
@@ -42,4 +42,19 @@ body,
 #footer {
   height: 200px;
   background-color: rgb(230, 230, 230);
+}
+
+@media screen and (max-width: 400px) {
+  .product-card {
+    width: 160px !important;
+  }
+  #header {
+    padding: 0 8px;
+  }
+  #body {
+    padding: 0 8px;
+  }
+  .ant-carousel {
+    margin: 0 -8px;
+  }
 }
